@@ -60,12 +60,12 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-   - name: 涡轮增雕进程
-     run: |
-       cd package
-       mkdir openwrt-packages
-       cd openwrt-packages
-       git clone https://github.com/xiaorouji/openwrt-passwall.git
+    - name: Clone passwall code
+      run: |
+        cd package
+        mkdir openwrt-packages
+        cd openwrt-packages
+        git clone https://github.com/xiaorouji/openwrt-passwall.git
        
     - name: Load custom feeds
       run: |
